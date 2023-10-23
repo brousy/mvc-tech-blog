@@ -23,26 +23,26 @@ User.init(
       allowNull: false,
       unique: true,
       validate: {
-        isEmail: true // Validates that the email attribute is a valid email address
+        isEmail: true 
       }
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [4] // Validates that the password attribute has a minimum length of 4 characters
+        len: [4] 
       }
     }
   },
   {
-    // Specify the database connection and model options
+
     sequelize,
-    timestamps: false, // Disables Sequelize's timestamps feature
-    freezeTableName: true, // Disables the pluralization of the table name
-    underscored: true, // Sets the naming convention for the columns to snake_case
-    modelName: 'user' // Sets the name of the model to User
+    timestamps: false, 
+    freezeTableName: true, 
+    underscored: true, 
+    modelName: 'user' 
   }
 );
 
-// Export the User model for use in other parts of the application
+
 module.exports = User;

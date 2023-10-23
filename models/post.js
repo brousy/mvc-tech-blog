@@ -1,4 +1,3 @@
-// Import necessary modules
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -25,7 +24,7 @@ Post.init(
       type: DataTypes.TEXT,
       allowNull: false
     },
-    // Define the "user_id" attribute and set up a foreign key to the User model
+
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -35,7 +34,7 @@ Post.init(
     }
   },
   {
-    // Specify the database connection and model options
+
     sequelize,
     timestamps: true, // Add "created_at" and "updated_at" timestamps
     freezeTableName: true, // Use the same table name as the model name
@@ -44,5 +43,5 @@ Post.init(
   }
 );
 
-// Export the Post model for use in other parts of the application
+
 module.exports = Post;
